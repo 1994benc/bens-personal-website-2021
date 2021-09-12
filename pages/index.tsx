@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   return (
     <div>
-      <div style={{ height: '80vh'}} id="about">
+      <div style={{ height: '70vh'}} id="about">
         <About />
       </div>
     </div>

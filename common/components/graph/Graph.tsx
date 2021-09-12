@@ -144,13 +144,13 @@ export default function GraphComponent({ data }: Props): ReactElement {
       (item as INode).getEdges().forEach((edge) => {
         graphInstance.setItemState(edge, "selected", true);
       });
-      if (graphInstance.getZoom() < 1.4) {
+      if (graphInstance.getZoom() < 1.2) {
         const zoom = (factor: number) => {
           graphInstance.zoomTo(factor, {
             x: item.getBBox().x,
             y: item.getBBox().y,
           });
-          if (factor < 1.4) {
+          if (factor < 1.2) {
             requestAnimationFrame(() => {
               zoom(factor + 0.07);
             });
@@ -159,23 +159,39 @@ export default function GraphComponent({ data }: Props): ReactElement {
         requestAnimationFrame(() => {
           zoom(graphInstance.getZoom() + 0.07);
         });
+        setTimeout(() => {
+          graphInstance.focusItem(item, true, {
+            duration: 300,
+            easing: "easeCubic",
+          });
+        }, 300);
       }
-      graphInstance.focusItem(item, true, {
-        duration: 300,
-        easing: "easeCubic",
-      });
     });
     graphInstance.read(data);
     return graphInstance;
   };
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative", background: "#272727" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        background: "#272727",
+      }}
+    >
+      <div style={{ width: "100%", height: "100%" }} ref={container}></div>
       <div
-        style={{ width: "100%", height: "100%" }}
-        ref={container}
-      ></div>
-      <div style={{ position: "absolute", top: 0, right: 0, color: "white", padding: '1rem' }}>
-        <button className="button" onClick={() => graph?.fitView()}>Reset View</button>
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          color: "white",
+          padding: "1rem",
+        }}
+      >
+        <button className="button" onClick={() => graph?.fitView()}>
+          Reset View
+        </button>
       </div>
     </div>
   );

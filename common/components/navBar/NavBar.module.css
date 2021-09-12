@@ -5,7 +5,8 @@
 .navBar {
   margin: 0 auto;
   color: white;
-  padding: 5rem 1rem;
+  /* padding: 5rem 1rem; */
+  min-height:30vh;
   display: flex;
   align-items: center;
   max-width: 1000px;
