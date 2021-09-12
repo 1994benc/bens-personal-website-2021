@@ -1,0 +1,33 @@
+/* @type */
+.navBarWrapper {
+  background-color: black;
+}
+.navBar {
+  margin: 0 auto;
+  color: white;
+  padding: 5rem 1rem;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.brand {
+  font-size: 50px;
+  margin-right: 50px;
+}
+
+.menuItem {
+  font-size: 50px;
+  margin-right: 20px;
+  color: rgba(255, 255, 255, 0.466);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.534);
+}
+
+.menuItem:hover {
+  color: var(--lime);
+}
+
+.active {
+  border-bottom: 1px dotted var(--lime);
+  color: var(--lime);
+}

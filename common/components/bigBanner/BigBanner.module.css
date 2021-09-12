@@ -1,0 +1,17 @@
+.BigBanner {
+    background-color: var(--fadedLime);
+    padding: 10rem 2rem;
+    font-size: 100px;
+    color: var(--darkLime);
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 6rem;
+}
+
+.inverted {
+    background-color: var(--darkLime);
+    color: var(--fadedLime);
+}

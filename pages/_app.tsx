@@ -1,7 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import React from "react";
+import NavBar from "../common/components/navBar/NavBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <Head>
+        <title>Ben Chomsang</title>
+      </Head>
+      <NavBar />
+      <Component {...pageProps} />
+    </div>
+  );
 }
-export default MyApp
+export default MyApp;
