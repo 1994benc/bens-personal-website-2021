@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
 import NavBar from "../common/components/navBar/NavBar";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Ben Chomsang</title>
       </Head>
+      <Toaster/>
       <NavBar />
       <Component {...pageProps} />
     </div>

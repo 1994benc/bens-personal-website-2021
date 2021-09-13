@@ -1,5 +1,6 @@
 import G6, { Graph, GraphData, IGroup, INode } from "@antv/g6";
 import React, { ReactElement, useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 interface Props {
   data: GraphData;
@@ -165,6 +166,15 @@ export default function GraphComponent({ data }: Props): ReactElement {
             easing: "easeCubic",
           });
         }, 300);
+      }
+
+      if (item.getModel().isCopyEnabled && item.getModel().label) {
+        navigator.clipboard
+          .writeText(item.getModel().label as string)
+          .then(() => {
+            toast.success(item.getModel().label + " copied to clipboard");
+          })
+          .catch((err) => console.error(err));
       }
     });
     graphInstance.read(data);

@@ -19,7 +19,7 @@ export default function NavBar({}: Props): ReactElement {
                   : styles.menuItem
               }
             >
-              About
+              All
             </a>
           </Link>
           <Link href="/?mode=skills">
