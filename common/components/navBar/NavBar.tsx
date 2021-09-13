@@ -12,62 +12,28 @@ export default function NavBar({}: Props): ReactElement {
         <div className={styles.brand}>B</div>
         <div className={styles.menuItemGroup}>
           <Link href="/?mode=about">
-            <a
-              className={
-                query.mode === "about"
-                  ? styles.menuItem + " " + styles.active
-                  : styles.menuItem
-              }
-            >
-              All
-            </a>
+            <a className={isActive("about")}>All</a>
           </Link>
           <Link href="/?mode=skills">
-            <a
-              className={
-                query.mode === "skills"
-                  ? styles.menuItem + " " + styles.active
-                  : styles.menuItem
-              }
-            >
-              Skills
-            </a>
+            <a className={isActive("skills")}>Skills</a>
           </Link>
           <Link href="/?mode=contact">
-            <a
-              className={
-                query.mode === "contact"
-                  ? styles.menuItem + " " + styles.active
-                  : styles.menuItem
-              }
-            >
-              Contact
-            </a>
+            <a className={isActive("contact")}>Contact</a>
           </Link>
           <Link href="/?mode=careers">
-            <a
-              className={
-                query.mode === "careers"
-                  ? styles.menuItem + " " + styles.active
-                  : styles.menuItem
-              }
-            >
-              Careers
-            </a>
+            <a className={isActive("careers")}>Careers</a>
           </Link>
           <Link href="/?mode=edu">
-            <a
-              className={
-                query.mode === "edu"
-                  ? styles.menuItem + " " + styles.active
-                  : styles.menuItem
-              }
-            >
-              Education
-            </a>
+            <a className={isActive("edu")}>Education</a>
           </Link>
         </div>
       </div>
     </div>
   );
+
+  function isActive(mode: string): string {
+    return query.mode === mode
+      ? styles.menuItem + " " + styles.active
+      : styles.menuItem;
+  }
 }
