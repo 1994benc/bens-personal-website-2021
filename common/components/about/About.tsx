@@ -213,10 +213,9 @@ export default function About({}: Props): ReactElement {
   const [data, setData] = useState<GraphData>({});
 
   useEffect(() => {
-    console.log(query);
     if (query.mode) {
       const visibleNodeIds = GraphCollapseHelper.getRemainingNodeIds(
-        initialData as any,
+        initialData,
         query.mode as string,
         GraphCollapseTypeEnum.getAllDescendants
       );
@@ -238,6 +237,7 @@ export default function About({}: Props): ReactElement {
       setData({ ...initialData });
     }
     // Don't listen for data changes as we mutate it inside this useEffect
+    // and it will trigger this useEffect again, resulting in infinite calls
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 

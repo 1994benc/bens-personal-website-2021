@@ -1,0 +1,14 @@
+type Edge @model @auth(rules: [{allow: public, operations: [read]}]) {
+  id: ID!
+  source: String
+  target: String
+  label: String
+}
+
+type Node @model @auth(rules: [{allow: public, operations: [read]}]) {
+  id: ID!
+  label: String!
+  description: String
+  isCopyEnabled: Boolean
+}
+ 

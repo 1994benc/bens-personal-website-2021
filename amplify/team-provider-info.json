@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bencs-dev-122801-authRole",
+      "UnauthRoleArn": "arn:aws:iam::111402846979:role/amplify-bencs-dev-122801-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::111402846979:role/amplify-bencs-dev-122801-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-bencs-dev-122801-deployment",
+      "UnauthRoleName": "amplify-bencs-dev-122801-unauthRole",
+      "StackName": "amplify-bencs-dev-122801",
+      "StackId": "arn:aws:cloudformation:eu-west-1:111402846979:stack/amplify-bencs-dev-122801/a98319f0-1485-11ec-ab73-0a3e772c1763",
+      "AmplifyAppId": "d2cj8xxxc2u1ay"
+    },
+    "categories": {
+      "auth": {
+        "bencs8b88eb1d": {}
+      }
+    }
+  }
+}

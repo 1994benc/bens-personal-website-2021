@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "bencs",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authbencs8b88eb1d",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
