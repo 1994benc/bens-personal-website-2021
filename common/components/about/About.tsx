@@ -44,6 +44,9 @@ const initialData = {
     },
     { id: "publicHealthOfficer", label: "Public Health Officer" },
     { id: 'naturalLang', label: "Natural Language Processing" },
+    { id: 'agile', label: "Best practices in\nAgile software development" },
+
+
   ],
   edges: [
     { id: "about-skills", source: "about", target: "skills", label: "Has" },
@@ -54,6 +57,7 @@ const initialData = {
       source: "skills",
       target: "beSciDataSci",
     },
+    {id: 'cedus-agile', source: "cedus", target: 'agile', label: 'Using skill'},
     {id: 'softwareEngineering-frontEndWeb', source: "softwareEngineering", target: "frontEndWeb", label: 'Specialised in'},
     {id: 'softwareEngineering-backEndWeb', source: "softwareEngineering", target: "backEndWeb", label: 'Specialised in'},
     {id: 'frontEndWeb-typescript', source:'frontEndWeb', target: "typescript", label: 'Using'},
